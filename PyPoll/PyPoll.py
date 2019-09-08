@@ -51,13 +51,17 @@ with open (csvpoll, newline = '')as csvpoll_file:
     maxper = 0.0
     for name in candidate_list:
         per = (candidate_vote_count[name]/total_votes*100)
-        per_new = '{0: .3f}'.format(per)
-        string_list.append(f" {name} : {per_new}% ({candidate_vote_count[name]})")
-        #print(f" {name} : {pcer}% ({candidate_vote_count[name]})")
+        #per_new = '{0: .3f}'.format(per)
+
+        #string_list.append(f" {name} : {per:.3f}% ({candidate_vote_count[name]})")
+
+        #print(f" {name} : {per_new}% ({candidate_vote_count[name]})")
 
         if(per > maxper) :
             winner =name
             maxper = per
+
+        string_list.append(f" {name} : {per:.3f}% ({candidate_vote_count[name]})")
 
     string_list.append("----------------------")
     #print("------------------------")
