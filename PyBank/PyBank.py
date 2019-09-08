@@ -57,10 +57,10 @@ with open(budget_data, newline ='') as budget_data_file:
         if difference[1]< current_greatest_decrease[1]:
             current_greatest_decrease = difference
 
-print('Financial Analysis')
-print('----------------------------')
-print(f'Total Months: {total_months}')
-print(f'Profit: ${total_profit}')
+#print('Financial Analysis')
+#print('----------------------------')
+#print(f'Total Months: {total_months}')
+#print(f'Profit: ${total_profit}')
 
 newlist = []
 for i in monthly_diff[1:]:
@@ -68,6 +68,20 @@ for i in monthly_diff[1:]:
 
 average_change = sum(newlist)/(total_months-1)
 average_change = round(average_change, 2)
-print(f'Average Change: ${average_change}')
-print(f'Greatest Increase in Profits: {current_greatest_increase[0]} (${current_greatest_increase[1]})')
-print(f'Greatest Decrease in Profits: {current_greatest_decrease[0]} (${current_greatest_decrease[1]})')
+#print(f'Average Change: ${average_change}')
+#print(f'Greatest Increase in Profits: {current_greatest_increase[0]} (${current_greatest_increase[1]})')
+#print(f'Greatest Decrease in Profits: {current_greatest_decrease[0]} (${current_greatest_decrease[1]})')
+
+string_list = []
+string_list.append("Financial Analysis")
+string_list.append("----------------------------")
+string_list.append(f"Total Months: {total_months}")
+string_list.append(f"Profit: ${total_profit}")
+string_list.append(f"Average Change: ${average_change}")
+string_list.append(f"Greatest Increase in Profits: {current_greatest_increase[0]} (${current_greatest_increase[1]}")
+string_list.append(f"Greatest Decrease in Profits: {current_greatest_decrease[0]} (${current_greatest_decrease[1]})")
+
+filename = "Results.txt"
+with open (filename, 'w') as file:
+    for i in string_list:
+        print(i)
