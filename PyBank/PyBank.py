@@ -81,7 +81,8 @@ string_list.append(f"Average Change: ${average_change}")
 string_list.append(f"Greatest Increase in Profits: {current_greatest_increase[0]} (${current_greatest_increase[1]}")
 string_list.append(f"Greatest Decrease in Profits: {current_greatest_decrease[0]} (${current_greatest_decrease[1]})")
 
-filename = "Results.txt"
+filename = ("Results.txt")
 with open (filename, 'w') as file:
     for i in string_list:
         print(i)
+        file.write(i + "\n")
